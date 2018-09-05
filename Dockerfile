@@ -22,7 +22,7 @@ RUN echo "APT::Get::Install-Recommends 'false'; \n\
     APT::Get::force-yes 'true';" > /etc/apt/apt.conf.d/00-general
 
 RUN apt-get update
-RUN apt-get install -yq dbus systemd apt-utils ssl-cert ca-certificates apt-transport-https curl wget git gpg python
+RUN apt-get install -yq dbus systemd apt-utils ssl-cert ca-certificates apt-transport-https curl wget git gpg python sudo
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN systemctl set-default multi-user.target
